@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
 import Cart from "./pages/cart/Cart";
+import { type } from "@testing-library/user-event/dist/type";
 
 function App() {
   const [{ filter_types, json_data }, dispatch] = useStateValue();
@@ -26,21 +27,40 @@ function App() {
     type: [],
   });
 
+  let setFilt1 = {};
+  let gender = [];
+  let color = [];
+  let price = [];
+  let type = [];
+
   useEffect(() => {
     if (arrayData) {
       dispatch({
         type: "JSON_DATA",
         item: { json_data: arrayData },
       });
-      let a = ["Gender", "Color", "Price range", "Type"];
-      dispatch({
-        type: "FILTER_TYPES",
-        item: { filter_types: filt },
+    }
+
+    if (arrayData) {
+      arrayData.map((item) => {
+        gender.push(item.gender);
+        color.push(item.color);
+        price.push(item.price);
+        type.push(item.type);
       });
     }
-  }, [arrayData]);
+    setFilt1["gender"] = [...new Set(gender)];
+    setFilt1["color"] = [...new Set(color)];
+    setFilt1["price"] = [...new Set(price)];
+    setFilt1["type"] = [...new Set(type)];
 
-  console.log("filter_types", filter_types, json_data);
+    setFilt(setFilt1);
+
+    dispatch({
+      type: "FILTER_TYPES",
+      item: { filter_types: filt },
+    });
+  }, [arrayData]);
 
   return (
     <div className="App">

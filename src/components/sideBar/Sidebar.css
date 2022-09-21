@@ -1,7 +1,29 @@
 .sidebar {
   width: 25vw;
   height: 80vh;
-  background-color: beige;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+/* .sidebar::-webkit-scrollbar-button {
+  background-color: transparent;
+  height: 1%;
+} */
+.sidebar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgb(205, 205, 205);
+  border-radius: 1rem;
+}
+
+.sideBarItem {
+  padding-left: 2rem;
 }
 
 @media (max-width: 600px) {

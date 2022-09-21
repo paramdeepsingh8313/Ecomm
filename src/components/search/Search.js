@@ -12,8 +12,6 @@ function Search() {
   const [newArr, setNewArr] = useState();
 
   function handleInput(e) {
-    // setSearched(e.target.value);
-    console.log("json_data", json_data);
     let a = [];
     json_data &&
       json_data.map((ele, index) => {
