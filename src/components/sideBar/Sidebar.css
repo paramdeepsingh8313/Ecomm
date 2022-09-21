@@ -1,0 +1,17 @@
+.sidebar {
+  width: 25vw;
+  height: 80vh;
+  background-color: beige;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}

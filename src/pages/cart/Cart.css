@@ -1,0 +1,83 @@
+.cardComp {
+  padding-left: 2vw;
+}
+.cardCompContainer {
+  width: 40vw;
+  height: 70vh;
+  padding-left: 5vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.description h4 {
+  margin: 0;
+}
+
+.eachItemImg {
+  width: 5rem;
+  height: 5rem;
+}
+.eachItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.imgCss {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (max-width: 600px) {
+  .cardComp > h2 {
+    font-size: 2rem;
+    padding-left: 1.5rem;
+  }
+  .cardCompContainer {
+    width: 100vw;
+    height: 80vh;
+    /* border: 1px solid blue; */
+    padding-left: 5vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .eachItem {
+    height: 25%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+  .eachItem button,
+  .eachItem select {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cardComp > h2 {
+    font-size: 2rem;
+    padding-left: 1.5rem;
+  }
+  .cardCompContainer {
+    width: 100vw;
+    height: 80vh;
+    padding-left: 5vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .eachItem {
+    height: 25%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+  .eachItem button,
+  .eachItem select {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,40 @@
+.srchInp {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: transparent;
+}
+
+.filterImg {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .filterImg {
+    display: block;
+  }
+  .srchInp {
+    width: 60%;
+    font-size: 1.6rem;
+  }
+  .SearchImg,
+  .filterImg {
+    width: 8% !important;
+    height: 8% important;
+  }
+}
+
+@media (max-width: 767px) {
+  .filterImg {
+    display: block;
+  }
+  .srchInp {
+    width: 60%;
+    font-size: 1.6rem;
+  }
+  .SearchImg,
+  .filterImg {
+    width: 8% !important;
+    height: 8% important;
+  }
+}

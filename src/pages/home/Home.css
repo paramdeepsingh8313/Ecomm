@@ -1,0 +1,24 @@
+.searchComp {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.searchComp div:first-child {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.searchComp div:first-child img {
+  padding: 0 10px;
+}
+
+.contentComp {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+}
