@@ -1,10 +1,13 @@
 .headerLeft {
   width: 85vw;
   height: 10vh;
-  /* background-color: yellow; */
   display: flex;
   align-items: center;
 }
+.headerLeft h4:first-child {
+  font-size: 2rem;
+}
+
 .headerRight {
   width: 15vw;
   /* background-color: white; */

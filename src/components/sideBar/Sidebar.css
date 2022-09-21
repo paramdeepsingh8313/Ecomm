@@ -26,6 +26,10 @@
   padding-left: 2rem;
 }
 
+.sideBarItem input[type="radio"] {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .sidebar {
     display: none;

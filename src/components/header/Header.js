@@ -10,17 +10,17 @@ function Header() {
   return (
     <>
       <div className="headerLeft">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <h4>Shopify</h4>
         </Link>
       </div>
       <div className="headerRight">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <h4 style={{ textDecoration: "none" }}>Products</h4>
         </Link>
 
         <div className="cardDiv">
-          <Link to="/cart">
+          <Link to="/cart" style={{ textDecoration: "none" }}>
             <img
               src={cart}
               alt="Cart Logo"

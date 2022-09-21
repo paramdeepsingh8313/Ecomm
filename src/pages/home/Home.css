@@ -6,6 +6,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.searchComp img {
+  cursor: pointer;
+}
+
 .searchComp div:first-child {
   width: 100vw;
   display: flex;

@@ -51,6 +51,7 @@
   height: 1.6rem;
   border-radius: 4px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

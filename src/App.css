@@ -22,3 +22,15 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 600px) {
+  .App {
+    box-sizing: unset;
+  }
+  .headerComp {
+    box-sizing: unset;
+  }
+  .bodyComp {
+    box-sizing: unset;
+  }
+}
