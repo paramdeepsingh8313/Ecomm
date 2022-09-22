@@ -49,22 +49,15 @@ function Cart() {
     return ar;
   }
 
-  let itemCountRef = useRef(null);
+  let itemCountRef = useRef([]);
 
   function changeHandle(e) {
     let price = e[0];
     let qnty = e[1];
+    let indx = e[2];
     let total = price * qnty;
-    // alert(total);
-    itemCountRef.current.textContent = `Rs. ${total}`;
-    // itemCountRef.current.value = total;
+    itemCountRef.current[indx].textContent = `Rs. ${total}`;
     return total;
-  }
-
-  function calc(amount, num = 1) {
-    let a = amount * num;
-    // alert(a);
-    return a;
   }
 
   return (
@@ -81,24 +74,19 @@ function Cart() {
                   </div>
                   <div className="description">
                     <h4>{elem.name}</h4>
-                    <h4 ref={itemCountRef}>
-                      {" "}
-                      Rs. {calc(elem.price)}
-                      {/* <h4>
-                     
-                      <input
-                        type="text"
-                        ref={itemCountRef}
-                        value={elem.price}
-                        className="priceInp"
-                      /> */}
+                    <h4
+                      key={index}
+                      ref={(element) => {
+                        itemCountRef.current[index] = element;
+                      }}
+                    >
+                      Rs. {elem.price}
                     </h4>
                   </div>
                   <select
-                    onChange={(e) => {
-                      changeHandle([elem.price, e.target.value]);
-                      calc(elem.price, e.target.value);
-                    }}
+                    onChange={(e) =>
+                      changeHandle([elem.price, e.target.value, index])
+                    }
                   >
                     {callMe(elem.quantity).map((element, index) => (
                       <option key={index} value={element}>
