@@ -9,6 +9,22 @@
   overflow-y: scroll;
 }
 
+.cardCompContainer::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+.priceInp {
+  border: none;
+  outline: none;
+}
+.cardCompContainer::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.cardCompContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(205, 205, 205);
+  border-radius: 1rem;
+}
+
 .description h4 {
   margin: 0;
 }

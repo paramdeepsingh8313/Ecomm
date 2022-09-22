@@ -8,9 +8,6 @@ function Cart() {
 
   const [arrList, setArrList] = useState();
 
-  let initialValue = 1;
-  // const itemCount = useRef(initialValue);
-
   function ResheshArray() {
     let itemList = [];
     add_to_cart &&
@@ -44,6 +41,32 @@ function Cart() {
     ResheshArray();
   };
 
+  function callMe(e) {
+    let ar = [];
+    for (let i = 1; i <= e; i++) {
+      ar.push(i);
+    }
+    return ar;
+  }
+
+  let itemCountRef = useRef(null);
+
+  function changeHandle(e) {
+    let price = e[0];
+    let qnty = e[1];
+    let total = price * qnty;
+    // alert(total);
+    itemCountRef.current.textContent = `Rs. ${total}`;
+    // itemCountRef.current.value = total;
+    return total;
+  }
+
+  function calc(amount, num = 1) {
+    let a = amount * num;
+    // alert(a);
+    return a;
+  }
+
   return (
     <div className="cardComp">
       <h2>Shopping Cart</h2>
@@ -52,16 +75,36 @@ function Cart() {
           arrList.map((elem, index) => {
             return (
               <>
-                <div className="eachItem">
+                <div className="eachItem" key={index}>
                   <div className="eachItemImg">
                     <img src={elem.imgUrl} alt="no image" className="imgCss" />
                   </div>
                   <div className="description">
                     <h4>{elem.name}</h4>
-                    <h4>Rs. {elem.price}</h4>
+                    <h4 ref={itemCountRef}>
+                      {" "}
+                      Rs. {calc(elem.price)}
+                      {/* <h4>
+                     
+                      <input
+                        type="text"
+                        ref={itemCountRef}
+                        value={elem.price}
+                        className="priceInp"
+                      /> */}
+                    </h4>
                   </div>
-                  <select disabled>
-                    <option>Qty: {initialValue}</option>
+                  <select
+                    onChange={(e) => {
+                      changeHandle([elem.price, e.target.value]);
+                      calc(elem.price, e.target.value);
+                    }}
+                  >
+                    {callMe(elem.quantity).map((element, index) => (
+                      <option key={index} value={element}>
+                        {element}
+                      </option>
+                    ))}
                   </select>
                   <button onClick={() => handleDel(elem.id)}>Delete</button>
                 </div>
